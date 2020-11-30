@@ -6,11 +6,20 @@
     if(mysqli_connect_error()){
         die("Failed Connect DB.");
     }
+
+	$sql = "SELECT * FROM userdata WHERE user = :user";
+	$stmt = $pdo->prepare($sql);
+	$stmt->bindValue(':user', $_POST['user']);
+	$stmt->execute();
+	$member = $stmt->fetch();
+	
     if($_POST['user'] == ''){
         echo "ユーザー名を入力してください";
     }elseif($_POST['password']==''){
         echo "Passwordを入力してください";
-    }else{
+    }elseif ($member['user'] === $_POST['user']){
+		echo "同じユーザー名が存在します";
+	}else{
 		$user = $_POST['user'];
 		//パスワードのハッシュ化
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
