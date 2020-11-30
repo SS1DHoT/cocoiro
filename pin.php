@@ -29,16 +29,9 @@ if (isset($_SESSION['USER'])) {
      <input type="password" name="password">
      <button type="submit">ログイン</button>
    </form>
-   <h1>初めての方はこちら</h1>
-   <form action="signUp.php" method="post">
-     <label>ユーザ名</label>
-     <input type="text" name="user">
-     <label>パスワード</label>
-     <input type="password" name="password">
-     <button type="submit">新規登録</button>
+   <a href="リンク先のＵＲＬ">はじめての方はこちら</a>
 <!--
 	 <p>※パスワードは半角英数字をそれぞれ１文字以上含んだ、８文字以上で設定してください。</p>
 -->
-   </form>
  </body>
 </html>
