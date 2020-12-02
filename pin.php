@@ -29,11 +29,11 @@ if (isset($_SESSION['USER'])) {
      <input type="text" name="user" class="textbox1"><br>
      <label>●パスワード</label>
      <input type="password" name="password" class="textbox2"><br>
-     <button type="submit">ログイン</button>
+     <button type="submit" onfocus="this.blur();">ログイン</button>
         </div>
 
    </form>
-   <a href="リンク先のＵＲＬ">はじめての方はこちら</a>
+   <a href="enter.html">《はじめての方はこちら》</a>
 <!--
 	 <p>※パスワードは半角英数字をそれぞれ１文字以上含んだ、８文字以上で設定してください。</p>
 -->
