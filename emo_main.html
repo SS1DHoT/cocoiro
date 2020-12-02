@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<form action="index.html">
+		<button type="button" name="" value="ホーム">ホーム画面へ</button>
+	</form>
+	<form action="emo_color.html">
+		<button type="button" name="" value="色変更">色変更画面へ</button>
+	</form>
+<head>
+<meta charset="UTF-8">
+<title>クラス操作てすと</title>
+<style>
+.sample01 {  
+   width:100px;
+   height:100px;
+   border-radius:50%;
+   background-color:#ffb6c1;
+   text-align:center;
+   line-height:100px;
+}
+.sample02 {  
+   width:100px;
+   height:100px;
+   border-radius:50%;
+   background-color:#87cefa;
+   text-align:center;
+   line-height:100px;
+}
+.sample03 {  
+   width:100px;
+   height:100px;
+   border-radius:50%;
+   background-color:#ffb6c1;
+   text-align:center;
+   line-height:100px;
+}
+.sample04 {  
+   width:100px;
+   height:100px;
+   border-radius:50%;
+   background-color:#87cefa;
+   text-align:center;
+   line-height:100px;
+}
+</style>
+</head>
+<body>
+ <div id="1" class="sample01">嬉しい</div>
+ <div id="2" class="sample02">哀しい</div>
+ <div id="3" class="sample03">楽しい</div>
+ <div id="4" class="sample04">怒り</div>
+
+<script>
+
+"use strict";
+	
+var color1 = '';
+var color2 = '';
+var color3 = '';
+var color4 = '';
+
+var a1=0;
+var a2=0;
+var a3=0;
+var a4=0;
+
+const target1 = document.getElementById("1");
+const target2 = document.getElementById("2");
+const target3 = document.getElementById("3");
+const target4 = document.getElementById("4");
+
+target1.addEventListener('click',js_size1);
+target2.addEventListener('click',js_size2);
+target3.addEventListener('click',js_size3);
+target4.addEventListener('click',js_size4);
+
+document.addEventListener('DOMContentLoaded',get_json);
+
+function js_size1(){
+	if(a1==0){
+		a1++;
+		target1.style.width='120px';
+		target1.style.height='120px';
+		target1.style.lineHeight='120px';
+	}else if(a1==1){
+		a1++;
+		target1.style.width='140px';
+		target1.style.height='140px';
+		target1.style.lineHeight='140px';
+	}else{
+		a1=0;
+		target1.style.width='100px';
+		target1.style.height='100px';
+		target1.style.lineHeight='100px';
+	}
+}
+function js_size2(){
+	if(a2==0){
+		a2++;
+		target2.style.width='120px';
+		target2.style.height='120px';
+		target2.style.lineHeight='120px';
+	}else if(a2==1){
+		a2++;
+		target2.style.width='140px';
+		target2.style.height='140px';
+		target2.style.lineHeight='140px';
+	}else{
+		a2=0;
+		target2.style.width='100px';
+		target2.style.height='100px';
+		target2.style.lineHeight='100px';
+	}
+}
+function js_size3(){
+	if(a3==0){
+		a3++;
+		target3.style.width='120px';
+		target3.style.height='120px';
+		target3.style.lineHeight='120px';
+	}else if(a3==1){
+		a3++;
+		target3.style.width='140px';
+		target3.style.height='140px';
+		target3.style.lineHeight='140px';
+	}else{
+		a3=0;
+		target3.style.width='100px';
+		target3.style.height='100px';
+		target3.style.lineHeight='100px';
+	}
+}
+function js_size4(){
+	if(a4==0){
+		a4++;
+		target4.style.width='120px';
+		target4.style.height='120px';
+		target4.style.lineHeight='120px';
+	}else if(a4==1){
+		a4++;
+		target4.style.width='140px';
+		target4.style.height='140px';
+		target4.style.lineHeight='140px';
+	}else{
+		a4=0;
+		target4.style.width='100px';
+		target4.style.height='100px';
+		target4.style.lineHeight='100px';
+	}
+}
+
+
+function getJSON() {
+            var req = new XMLHttpRequest();						// XMLHttpRequest オブジェクトを生成する
+            req.onreadystatechange = function () {				// XMLHttpRequest オブジェクトの状態が変化した際に呼び出されるイベントハンドラ
+                console.log(111);
+                if (req.readyState == 4 && req.status == 200) {	// サーバーからのレスポンスが完了し、かつ、通信が正常に終了した場合
+                    console.log(222);
+                    var data = JSON.parse(req.responseText);	// 取得した JSON ファイルの中身を変数へ格納
+                    var len = data.length;						// JSON のデータ数を取得
+					
+					//JSONから色を取得し、代入
+					color1=data[0].color;
+					color2=data[1].color;
+					color3=data[2].color;
+					color4=data[3].color;
+					
+					//取得した色をbackgroundに設定
+					target1.style.backgroundColor=color1;
+					target2.style.backgroundColor=color2;
+					target3.style.backgroundColor=color3;
+					target4.style.backgroundColor=color4;
+					
+                };
+            };
+            req.open("GET", "./data.json", true);				// HTTPメソッドとアクセスするサーバーのURLを指定
+            req.send();										    // 実際にサーバーへリクエストを送信
+        }
+
+
+</script>
+</body>
+	
+	
+</html>
