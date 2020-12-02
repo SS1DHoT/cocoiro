@@ -19,15 +19,19 @@ if (isset($_SESSION['USER'])) {
  <head>
    <meta charset="utf-8">
    <title>Login</title>
+     <link rel="stylesheet" href="pin.css">
  </head>
  <body>
-   <h1>ようこそ、ログインしてください。</h1>
+   <h1>ようこそ、ログインしてください＊</h1>
    <form  action="login.php" method="post">
-     <label>ユーザ名</label>
-     <input type="text" name="user">
-     <label>パスワード</label>
-     <input type="password" name="password">
+    <div class="box">     
+    <label>●ユーザ名</label>
+     <input type="text" name="user" class="textbox1"><br>
+     <label>●パスワード</label>
+     <input type="password" name="password" class="textbox2"><br>
      <button type="submit">ログイン</button>
+        </div>
+
    </form>
    <a href="リンク先のＵＲＬ">はじめての方はこちら</a>
 <!--

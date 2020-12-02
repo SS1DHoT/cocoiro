@@ -1,0 +1,43 @@
+@charset utf-8;
+
+h1{
+    color: #66cdaa; 
+}
+
+.box{
+    padding: 2em 1em;
+    margin: 1em 0;
+    color: azure;
+    background:#f5fffa;
+    border-left: solid 20px #66cdaa;
+    border-right: solid 20px #66cdaa;
+    
+}
+
+label{
+    margin: 30px;
+    color: black;
+    font-size: 20px;
+}
+
+.textbox1,.textbox2{
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    margin: 0.5em;
+}
+
+button{
+    background-color: #66cdaa;
+    margin: 1em 3em;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: arial;
+    border-style: none;
+    font-size: 20px;
+    
+}
+
+button:hover,h2:hover{
+    opacity: 0.7;
+}
