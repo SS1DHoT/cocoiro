@@ -1,0 +1,44 @@
+@charset utf-8;
+
+body{
+    background-color: #f0fff0;
+}
+
+button{
+    border-radius: 30px;
+    color: #fff;  
+    background-color:#66cdaa; 
+    border: none;
+    outline: none;
+    margin: 5px;
+    display: inline-block;
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+.btn{
+   position: relative
+}
+
+.button1{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.button2{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+img{
+    height: 10px;
+    width: 10px;
+}
+
+
+
+
