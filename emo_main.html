@@ -9,7 +9,7 @@
 	</form>
 <head>
 <meta charset="UTF-8">
-<title>クラス操作てすと</title>
+<title></title>
 <style>
 .sample01 {  
    width:100px;
@@ -151,7 +151,7 @@ function js_size4(){
 }
 
 
-function getJSON() {
+function get_json() {
             var req = new XMLHttpRequest();						// XMLHttpRequest オブジェクトを生成する
             req.onreadystatechange = function () {				// XMLHttpRequest オブジェクトの状態が変化した際に呼び出されるイベントハンドラ
                 console.log(111);
@@ -161,16 +161,16 @@ function getJSON() {
                     var len = data.length;						// JSON のデータ数を取得
 					
 					//JSONから色を取得し、代入
-					color1=data[0].color;
-					color2=data[1].color;
-					color3=data[2].color;
-					color4=data[3].color;
+					color1=data.data[0].color;
+					color2=data.data[1].color;
+					color3=data.data[2].color;
+					color4=data.data[3].color;
 					
 					//取得した色をbackgroundに設定
 					target1.style.backgroundColor=color1;
 					target2.style.backgroundColor=color2;
-					target3.style.backgroundColor=color3;
-					target4.style.backgroundColor=color4;
+					target3.style.backgroundColor=color4;
+					target4.style.backgroundColor=color3;
 					
                 };
             };
