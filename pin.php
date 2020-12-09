@@ -8,7 +8,6 @@ session_start();
 //ログイン済みの場合
 if (isset($_SESSION['USER'])) {
   echo 'ようこそ' .  h($_SESSION['USER']) . "さん<br>";
-  echo "<a href='/logout.php'>ログアウトはこちら。</a>";
   exit;
 }
 
@@ -33,7 +32,7 @@ if (isset($_SESSION['USER'])) {
         </div>
 
    </form>
-   <a href="enter.html">《はじめての方はこちら》</a>
+   <a href="./enter.html">《はじめての方はこちら》</a>
 <!--
 	 <p>※パスワードは半角英数字をそれぞれ１文字以上含んだ、８文字以上で設定してください。</p>
 -->
